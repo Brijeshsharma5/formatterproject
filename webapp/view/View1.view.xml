@@ -1,0 +1,38 @@
+<mvc:View controllerName="test.com.formatterproject.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Table id="yourTableId" items="{ path: '/SalesOrders' }">
+        <columns>
+            <Column>
+                <Text text="Order ID"/>
+            </Column>
+            <Column>
+                <Text text="Customer Name"/>
+            </Column>
+            <Column>
+                <Text text="Order Date"/>
+            </Column>
+            <Column>
+                <Text text="Total Amount"/>
+            </Column>
+            <Column>
+                <Text text="Currency"/>
+            </Column>
+            <Column>
+                <Text text="Status"/>
+            </Column>
+        </columns>
+        <items>
+            <ColumnListItem>
+                <cells>
+                    <Text text="{OrderID}"/>
+                    <Text text="{CustomerName}"/>
+                    <Text text="{ path: 'OrderDate', formatter: '.formatDateCustom' }"/>
+                    <Text text="{TotalAmount}"/>
+                    <Text text="{Currency}"/>
+                    <ObjectStatus text="{ path: 'Status', formatter: '.formatStatus' }" state="{ path: 'Status', formatter: '.formatStatusState' }"/>
+                </cells>
+            </ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>
